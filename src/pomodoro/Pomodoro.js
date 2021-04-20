@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import useInterval from "../utils/useInterval";
+
+import alarmSound from "../public/alarm/submarine-dive-horn.mp3"
 import SetDuration from "./SetDuration/SetDuration"
 import Buttons from "./Buttons/Buttons"
-
 import Progress from "./Progress/Progress"
 import Status from "./Progress/Status";
 import ProgressBar from "./Progress/Bar";
@@ -12,6 +13,7 @@ function Pomodoro() {
   const [breakDuration, setBreakDuration] = useState(5) // break  session duration as set in initial screen
   const [focusDuration, setFocusDuration] = useState(25) // focus session duration as set in initial screen
   const [session, setSession] = useState({active: false, type: "Focusing", timer: 0, duration: 0}) // active session state
+  const audio = new Audio(alarmSound)
   
   useInterval(
     () => {
@@ -20,7 +22,7 @@ function Pomodoro() {
       
       if(session.timer === session.duration){ //once timer reaches length of duration
         // Play Alarm
-        new Audio(`../public/alarm/submarine-dive-horn.mp3`).play()
+        audio.play()
         // change 'type' and 'timer' property of the session
         session.type === "Focusing" ? setSession({...session, type: "On Break", timer: 0, duration:breakDuration*60}) : 
           setSession({...session, type: "Focusing", timer: 0, duration:focusDuration*60});
