@@ -3,7 +3,7 @@ import {secondsToDuration} from "../../utils/duration";
 
 
 function Status({session}){
-    const {timer, type, duration, active} = session
+    const {timer, type, duration} = session
 
     return (
         <>

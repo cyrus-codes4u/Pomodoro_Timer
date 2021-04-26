@@ -1,0 +1,5 @@
+.vercel
+.qualified-attach.json
+build/
+src/__tests__/
+node_modules

@@ -1,6 +1,5 @@
 import React from "react";
 import { minutesToDuration } from "../../utils/duration"
-import PropTypes from 'prop-types';
 
 function SetBreak({duration, setDuration, active}){    
     const decreaseHandler = () => setDuration(Math.max(duration - 1, 1))

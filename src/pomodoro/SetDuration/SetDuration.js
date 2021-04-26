@@ -1,18 +1,10 @@
 import React from "react";
 import SetFocus from "./SetFocus"
 import SetBreak from "./SetBreak"
-import PropTypes from "prop-types"
 
 
 function SetDuration({focusDuration, setFocusDuration,
     breakDuration, setBreakDuration, active}){
-    SetBreak.propType  = {
-        setBreakDuration: PropTypes.func.isRequired,
-        setFocusDuration: PropTypes.func.isRequired,
-        focusDuration: PropTypes.number.isRequired,
-        breakDuration: PropTypes.number.isRequired,
-        active: PropTypes.bool.isRequired
-    }
     
     return (
         <div className="row">

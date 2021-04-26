@@ -1,9 +1,8 @@
 import React from "react";
 import { minutesToDuration } from "../../utils/duration"
-import PropTypes from 'prop-types';
 
 function SetFocus({duration, setDuration, active}){
-    const decreaseHandler = () => setDuration(Math.max(duration - 5, 5))
+    const decreaseHandler = () => setDuration(Math.max(duration - 1, 1))
     const increaseHandler = () => setDuration(Math.min(duration + 5, 60))
 
     return(
