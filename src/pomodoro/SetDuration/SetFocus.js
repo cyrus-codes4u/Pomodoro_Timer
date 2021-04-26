@@ -2,7 +2,7 @@ import React from "react";
 import { minutesToDuration } from "../../utils/duration"
 
 function SetFocus({duration, setDuration, active}){
-    const decreaseHandler = () => setDuration(Math.max(duration - 1, 1))
+    const decreaseHandler = () => setDuration(Math.max(duration - 5, 5))
     const increaseHandler = () => setDuration(Math.min(duration + 5, 60))
 
     return(
